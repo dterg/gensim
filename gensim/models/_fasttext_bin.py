@@ -165,7 +165,7 @@ def _load_vocab(fin, new_format, encoding='utf-8'):
     # Vocab stored by [Dictionary::save](https://github.com/facebookresearch/fastText/blob/master/src/dictionary.cc)
     if nlabels > 0:
         raise NotImplementedError("Supervised fastText models are not supported")
-    logger.info("loading %s words for fastText model from %s", vocab_size, fin.name)
+    logger.info("loading %s words for fastText model", vocab_size)
 
     _struct_unpack(fin, '@1q')  # number of tokens
     if new_format:
