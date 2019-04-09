@@ -220,6 +220,8 @@ def _load_matrix(fin, new_format=True):
         The number of columns of the array will correspond to the vector size.
 
     """
+    import numpy as np
+    
     if new_format:
         _struct_unpack(fin, '@?')  # bool quant_input in fasttext.cc
 
