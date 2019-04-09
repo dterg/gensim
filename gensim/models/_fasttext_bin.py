@@ -239,7 +239,6 @@ def _load_matrix(fin, new_format=True):
 #     matrix = np.load(fin)
     import boto3
     from io import BytesIO, StringIO
-    import numpy as np
 
     client = boto3.client('s3')
     obj = client.get_object(Bucket='etl-captify', Key='qa/dieter/crawl-300d-2M-subword/cc.en.300.bin')
