@@ -235,16 +235,16 @@ def _load_matrix(fin, new_format=True):
     else:
         raise ValueError("Incompatible float size: %r" % float_size)
 
-#     matrix = np.fromfile(fin, dtype=dtype, count=num_vectors * dim)
+    matrix = np.fromfile(fin, dtype=dtype, count=num_vectors * dim)
 #     matrix = np.load(fin)
-    import boto3
-    from io import BytesIO, StringIO
+#     import boto3
+#     from io import BytesIO, StringIO
 
-    client = boto3.client('s3')
-    obj = client.get_object(Bucket='etl-captify', Key='qa/dieter/crawl-300d-2M-subword/cc.en.300.bin')
-    data = obj['Body'].read()
-    data = np.frombuffer(data, dtype=dtype)
-    matrix = data.reshape((num_vectors, dim))
+#     client = boto3.client('s3')
+#     obj = client.get_object(Bucket='etl-captify', Key='qa/dieter/crawl-300d-2M-subword/cc.en.300.bin')
+#     data = obj['Body'].read()
+#     data = np.frombuffer(data, dtype=dtype)
+#     matrix = data.reshape((num_vectors, dim))
     return matrix
 
 
