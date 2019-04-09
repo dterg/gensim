@@ -233,7 +233,9 @@ def _load_matrix(fin, new_format=True):
     else:
         raise ValueError("Incompatible float size: %r" % float_size)
 
-    matrix = np.load(fin, dtype=dtype, count=num_vectors * dim)
+#     matrix = np.fromfile(fin, dtype=dtype, count=num_vectors * dim)
+    matrix = np.load(fin)
+
     matrix = matrix.reshape((num_vectors, dim))
     return matrix
 
